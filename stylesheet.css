@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --bg-color: #081b29;
+  --main-color: #00abf0;
+  --text-color: #333;
+  --second-text-color: #555;
+  --white-color: #fff;
+  --cover-color: linear-gradient(45deg, #00abf0, #006e9a);
+  --pages-color: linear-gradient(90deg, #fff, #ddd);
+  --border: .125rem solid #00abf0;
+  --box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-color);
+  color: var(--white-color);
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; }
+.section h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+/* Header & Navigation */
+.site-header { position: sticky; top: 0; z-index: 1000; background: rgba(8,27,41,.85); backdrop-filter: blur(8px); box-shadow: var(--box-shadow); }
+.nav { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 1rem; }
+.logo { font-weight: 700; font-size: 1.25rem; color: var(--white-color); }
+.nav-toggle { display: none; background: transparent; color: var(--white-color); font-size: 1.75rem; }
+.nav-links { list-style: none; display: flex; gap: 1rem; }
+.nav-links a { color: var(--white-color); opacity: .85; }
+.nav-links a.active, .nav-links a:hover { color: var(--main-color); opacity: 1; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 2rem; min-height: calc(100vh - 64px); }
+.hero h1 { font-size: 2.5rem; margin-bottom: .5rem; }
+.hero p { color: #cfe8f7; margin-bottom: 1rem; }
+.hero-image { background: var(--cover-color); border-radius: 1rem; min-height: 320px; box-shadow: var(--box-shadow); }
+
+/* Buttons */
+.btn { display: inline-block; padding: .75rem 1rem; border-radius: .5rem; border: var(--border); color: var(--main-color); background: transparent; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+.btn-primary { background: var(--main-color); color: var(--white-color); border-color: transparent; }
+.cta .btn { margin-right: .5rem; }
+
+/* Cards & Grids */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.card { background: #0b2235; border: 1px solid #0f2e49; border-radius: .75rem; box-shadow: var(--box-shadow); overflow: hidden; }
+.card-body { padding: 1rem; }
+.card h3 { margin-bottom: .5rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+.card img { width: 100%; height: 180px; object-fit: cover; }
+
+/* Skills */
+.skills { display: flex; flex-wrap: wrap; gap: .5rem; }
+.skills li { background: #0f2e49; color: var(--white-color); padding: .5rem .75rem; border-radius: .5rem; border: 1px solid #15597a; }
+
+/* Contact */
+.contact-form { max-width: 800px; }
+.contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.contact-form label { display: block; color: #cfe8f7; }
+.contact-form input, .contact-form textarea { width: 100%; margin-top: .35rem; padding: .65rem .75rem; border-radius: .5rem; background: #0b2235; color: var(--white-color); border: 1px solid #0f2e49; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--main-color); box-shadow: 0 0 0 .15rem rgba(0,171,240,.2); }
+
+/* Footer */
+.site-footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid #0f2e49; color: #cfe8f7; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav { position: relative; }
+  .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: #0b2235; padding: 1rem; display: grid; gap: .75rem; transform: scaleY(0); transform-origin: top; transition: transform .2s ease; border-top: 1px solid #0f2e49; }
+  .nav-links.open { transform: scaleY(1); }
+  .hero { grid-template-columns: 1fr; }
+  .contact-form .form-row { grid-template-columns: 1fr; }
+}
