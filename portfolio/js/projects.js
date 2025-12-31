@@ -76,6 +76,10 @@ const renderProjects = (filter = 'all') => {
       </article>
     `;
   }).join('');
+
+  projectsGrid.querySelectorAll('.reveal').forEach((card, index) => {
+    setTimeout(() => card.classList.add('visible'), 60 * index);
+  });
 };
 
 filterButtons.forEach((button) => {
@@ -84,8 +88,6 @@ filterButtons.forEach((button) => {
     button.classList.add('active');
     const filter = button.getAttribute('data-filter') || 'all';
     renderProjects(filter);
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('visible'));
-    setTimeout(() => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible')), 10);
   });
 });
 

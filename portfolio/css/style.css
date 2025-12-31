@@ -512,9 +512,19 @@ body[data-theme="light"] .theme-toggle .icon-moon {
   gap: 16px;
 }
 
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .card-grid.minimal .card {
   width: 100%;
   box-shadow: none;
+}
+
+.projects-grid .card {
+  width: 100%;
+  min-height: 240px;
+  box-shadow: var(--shadow);
 }
 
 .card h3 {
