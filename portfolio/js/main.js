@@ -16,6 +16,34 @@
     return `data:image/svg+xml,${encodeURIComponent(svg)}`;
   };
 
+  const createCyberPlaceholder = (text) => {
+    const svg = `<?xml version="1.0" encoding="UTF-8"?><svg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'>
+      <defs>
+        <linearGradient id='g1' x1='0' y1='0' x2='1' y2='1'>
+          <stop offset='0%' stop-color='#59d6ff'/>
+          <stop offset='45%' stop-color='#6b5bff'/>
+          <stop offset='100%' stop-color='#ff3d7f'/>
+        </linearGradient>
+        <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
+          <feGaussianBlur stdDeviation='12' result='b' />
+          <feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge>
+        </filter>
+      </defs>
+      <rect width='800' height='520' rx='28' fill='#060712'/>
+      <rect x='20' y='20' width='760' height='480' rx='20' fill='url(#g1)' opacity='0.06'/>
+      <g filter='url(#glow)'>
+        <rect x='36' y='36' width='728' height='448' rx='16' fill='none' stroke='url(#g1)' stroke-width='4' opacity='0.6'/>
+      </g>
+      <g opacity='0.9'>
+        <text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Space Grotesk, sans-serif' font-size='40' fill='#e9edf6'>${text}</text>
+      </g>
+      <g opacity='0.12'>
+        <rect x='0' y='0' width='800' height='520' fill='url(#g1)'/>
+      </g>
+    </svg>`;
+    return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+  };
+
   const savedTheme = localStorage.getItem('portfolio-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
@@ -101,7 +129,7 @@
   const galleryInput = document.getElementById('gallery-upload');
 
   if (avatarImg) {
-    avatarImg.src = createPlaceholder('Jabrane Arafa', '#59d6ff', '#6b5bff');
+    avatarImg.src = createCyberPlaceholder('Jabrane Arafa');
   }
 
   avatarUpload?.addEventListener('change', (event) => {
