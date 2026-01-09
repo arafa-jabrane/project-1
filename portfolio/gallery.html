@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Network & Software Engineer</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
+</head>
+<body data-theme="dark">
+  <header class="site-header glass">
+    <div class="brand" aria-label="Personal brand">
+      <div class="brand-mark">JA</div>
+      <div class="brand-text">
+        <span>Network Engineer</span>
+        <strong>Software Engineer</strong>
+      </div>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" data-nav="index">Home</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="projects.html" data-nav="projects">Projects</a></li>
+        <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+      <span class="icon-moon" aria-hidden="true">&#9790;</span>
+      <span class="icon-sun" aria-hidden="true">&#9728;</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div>
+        <p class="eyebrow">Gallery</p>
+        <h1>Visual snippets from builds and labs</h1>
+        <p class="lede">Architecture sketches, lab captures, dashboards, and moments from shipping secure systems.</p>
+      </div>
+    </section>
+
+    <section class="panel glass reveal">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Images</p>
+          <h2>Curated visuals</h2>
+        </div>
+      </div>
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </section>
+
+    <section class="panel glass reveal">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Add yours</p>
+          <h2>Upload and preview</h2>
+        </div>
+      </div>
+      <form class="upload-form" aria-label="Upload images">
+        <label for="gallery-upload" class="btn primary">Choose images</label>
+        <input id="gallery-upload" type="file" accept="image/*" multiple>
+        <p class="muted">Select one or more images to preview and add them to the grid.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer glass">
+    <div>
+      <p class="eyebrow">Jabrane Arafa — Network & Software Engineer</p>
+      <p>Building resilient networks and maintainable software. Available for collaborations and consulting.</p>
+    </div>
+    <div class="footer-actions">
+      <a class="text-link" href="mailto:alex.engineer@example.com">Email</a>
+      <a class="text-link" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="text-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
